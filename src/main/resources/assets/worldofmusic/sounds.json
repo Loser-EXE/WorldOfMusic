@@ -153,5 +153,50 @@
     "sounds": [
       "worldofmusic:british_boots_bugle"
     ]
+  },
+  "amazing_grace_bagpipes": {
+    "sounds": [
+      "worldofmusic:amazing_grace_bagpipes"
+    ]
+  },
+  "ballad_of_glencoe_bagpipes": {
+    "sounds": [
+      "worldofmusic:ballad_of_glencoe_bagpipes"
+    ]
+  },
+  "balmoral_bagpipes": {
+    "sounds": [
+      "worldofmusic:balmoral_bagpipes"
+    ]
+  },
+  "battle_of_the_somme_bagpipes": {
+    "sounds": [
+      "worldofmusic:battle_of_the_somme_bagpipes"
+    ]
+  },
+  "battle_of_waterloo_bagpipes": {
+    "sounds": [
+      "worldofmusic:battle_of_waterloo_bagpipes"
+    ]
+  },
+  "cock_o_the_north_bagpipes": {
+    "sounds": [
+      "worldofmusic:cock_o_the_north_bagpipes"
+    ]
+  },
+  "lilliburlero_bagpipes": {
+    "sounds": [
+      "worldofmusic:lilliburlero_bagpipes"
+    ]
+  },
+  "scotland_the_brave_bagpipes": {
+    "sounds": [
+      "worldofmusic:scotland_the_brave_bagpipes"
+    ]
+  },
+  "the_black_bear_bagpipes": {
+    "sounds": [
+      "worldofmusic:the_black_bear_bagpipes"
+    ]
   }
 }
