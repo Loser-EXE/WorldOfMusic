@@ -1,0 +1,18 @@
+{
+	"required": true,
+	"package": "worldofmusic.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"RaidWaveSpawnMixin",
+		"PatrolSpawnerMixin"
+	],
+	"client": [
+
+	],
+	"server": [
+
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

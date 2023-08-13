@@ -1,0 +1,112 @@
+{
+  "men_of_harlech_drum": {
+    "sounds": [
+      "worldofmusic:men_of_harlech_drum"
+    ]
+  },
+  "men_of_harlech_fife": {
+    "sounds": [
+      "worldofmusic:men_of_harlech_fife"
+    ]
+  },
+  "la_diane_drum": {
+    "sounds": [
+      "worldofmusic:la_diane_drum"
+    ]
+  },
+  "la_diane_fife": {
+    "sounds": [
+      "worldofmusic:la_diane_fife"
+    ]
+  },
+  "la_charge_drum": {
+    "sounds": [
+      "worldofmusic:la_charge_drum"
+    ]
+  },
+  "la_charge_fife": {
+    "sounds": [
+      "worldofmusic:la_charge_fife"
+    ]
+  },
+  "british_grenadiers_drum": {
+    "sounds": [
+      "worldofmusic:british_grenadiers_drum"
+    ]
+  },
+  "british_grenadiers_fife": {
+    "sounds": [
+      "worldofmusic:british_grenadiers_fife"
+    ]
+  },
+  "lilliburlero_drum": {
+    "sounds": [
+      "worldofmusic:lilliburlero_drum"
+    ]
+  },
+  "lilliburlero_fife": {
+    "sounds": [
+      "worldofmusic:lilliburlero_fife"
+    ]
+  },
+  "the_girl_i_left_behind_me_drum": {
+    "sounds": [
+      "worldofmusic:the_girl_i_left_behind_me_drum"
+    ]
+  },
+  "the_girl_i_left_behind_me_fife": {
+    "sounds": [
+      "worldofmusic:the_girl_i_left_behind_me_fife"
+    ]
+  },
+  "la_grenadiere_drum": {
+    "sounds": [
+      "worldofmusic:la_grenadiere_drum"
+    ]
+  },
+  "la_grenadiere_fife": {
+    "sounds": [
+      "worldofmusic:la_grenadiere_fife"
+    ]
+  },
+  "aux_champs_drum": {
+    "sounds": [
+      "worldofmusic:aux_champs_drum"
+    ]
+  },
+  "aux_champs_fife": {
+    "sounds": [
+      "worldofmusic:aux_champs_fife"
+    ]
+  },
+  "le_pas_cadence_drum": {
+    "sounds": [
+      "worldofmusic:le_pas_cadence_drum"
+    ]
+  },
+  "le_pas_cadence_fife": {
+    "sounds": [
+      "worldofmusic:le_pas_cadence_fife"
+    ]
+  },
+  "bonnie_dundee_drum": {
+    "sounds": [
+      "worldofmusic:bonnie_dundee_drum"
+    ]
+  },
+  "bonnie_dundee_bagpipes": {
+    "sounds": [
+      "worldofmusic:bonnie_dundee_bagpipes"
+    ]
+  },
+  "blue_bonnets_over_the_border_drum": {
+    "sounds": [
+      "worldofmusic:blue_bonnets_over_the_border_drum"
+    ]
+  },
+  "blue_bonnets_over_the_border_bagpipes": {
+    "sounds": [
+      "worldofmusic:blue_bonnets_over_the_border_bagpipes"
+    ]
+  }
+}
