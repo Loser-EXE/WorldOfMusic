@@ -46,7 +46,7 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
                     switch (this.spawnReason) {
                         case PATROL -> songs = instrument.getSongs(Instrument.PlayCondition.PATROL);
                         case STRUCTURE -> songs = instrument.getSongs(Instrument.PlayCondition.OUTPOST);
-                        default -> songs = instrument.getSongs();
+                        default -> songs = instrument.getSongs(Instrument.PlayCondition.NONE);
                     }
                     song = genRandomSong(songs);
                     playSong();

@@ -14,5 +14,6 @@ public class FifeItem extends Instrument {
         register("lilliburlero", PlayCondition.OUTPOST);
         register("le_pas_cadence", PlayCondition.OUTPOST);
         register("aux_champs", PlayCondition.OUTPOST);
+        register("hohenfriedeberger", PlayCondition.NONE);
     }
 }

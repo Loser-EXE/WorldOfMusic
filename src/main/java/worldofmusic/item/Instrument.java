@@ -65,10 +65,6 @@ public abstract class Instrument extends Item {
         }
     }
 
-    public List<String> getSongs() {
-        return this.songs;
-    }
-
     protected void register(String song, PlayCondition condition) {
         Identifier identifier = new Identifier(WorldOfMusic.MOD_ID, song + "_" + this.instrument);
         Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
@@ -85,6 +81,7 @@ public abstract class Instrument extends Item {
     public enum PlayCondition {
         RAID,
         OUTPOST,
-        PATROL
+        PATROL,
+        NONE
     }
 }

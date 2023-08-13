@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import worldofmusic.entity.ModEntities;
 import worldofmusic.entity.MusicianPillagerEntity;
+import worldofmusic.item.Instrument;
 import worldofmusic.item.ModItems;
 
 @Mixin(Raid.class)
@@ -28,10 +29,10 @@ public abstract class RaidWaveSpawnMixin {
     @Inject(method = "spawnNextWave", at = @At("HEAD"))
     public void spawnNextWave(BlockPos pos, CallbackInfo info) {
         if(Math.random() < 0.3) {
-            MusicianPillagerEntity.setRaidSong(MusicianPillagerEntity.genRandomSong(ModItems.BAGPIPES.getSongs()));
+            MusicianPillagerEntity.setRaidSong(MusicianPillagerEntity.genRandomSong(ModItems.BAGPIPES.getSongs(Instrument.PlayCondition.RAID)));
             registerMusicianToRaid(ModEntities.BAGPIPER_PILLAGER_ENTITY, pos);
         } else {
-            MusicianPillagerEntity.setRaidSong(MusicianPillagerEntity.genRandomSong(ModItems.FIFE.getSongs()));
+            MusicianPillagerEntity.setRaidSong(MusicianPillagerEntity.genRandomSong(ModItems.FIFE.getSongs(Instrument.PlayCondition.RAID)));
             registerMusicianToRaid(ModEntities.FIFER_PILLAGER_ENTITY, pos);
         }
         registerMusicianToRaid(ModEntities.DRUMMER_PILLAGER_ENTITY, pos);

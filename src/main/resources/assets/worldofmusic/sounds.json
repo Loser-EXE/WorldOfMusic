@@ -108,5 +108,50 @@
     "sounds": [
       "worldofmusic:blue_bonnets_over_the_border_bagpipes"
     ]
+  },
+  "hohenfriedeberger_drum": {
+    "sounds": [
+      "worldofmusic:hohenfriedeberger_drum"
+    ]
+  },
+  "hohenfriedeberger_fife": {
+    "sounds": [
+      "worldofmusic:hohenfriedeberger_fife"
+    ]
+  },
+  "to_the_color_bugle": {
+    "sounds": [
+      "worldofmusic:to_the_color_bugle"
+    ]
+  },
+  "reveille_bugle": {
+    "sounds": [
+      "worldofmusic:reveille_bugle"
+    ]
+  },
+  "la_marche_bugle": {
+    "sounds": [
+      "worldofmusic:la_marche_bugle"
+    ]
+  },
+  "dans_le_hussards_bugle": {
+    "sounds": [
+      "worldofmusic:dans_le_hussards_bugle"
+    ]
+  },
+  "charge_orders_bugle": {
+    "sounds": [
+      "worldofmusic:charge_orders_bugle"
+    ]
+  },
+  "british_light_infantry_bugle": {
+    "sounds": [
+      "worldofmusic:british_light_infantry_bugle"
+    ]
+  },
+  "british_boots_bugle": {
+    "sounds": [
+      "worldofmusic:british_boots_bugle"
+    ]
   }
 }

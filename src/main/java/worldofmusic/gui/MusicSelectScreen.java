@@ -30,7 +30,7 @@ public class MusicSelectScreen extends Screen {
     @Override
     protected void init() {
         super.init();
-        List<String> songs = instrument.getSongs();
+        List<String> songs = instrument.getSongs(Instrument.PlayCondition.NONE);
 
         int items = songs.size();
         int width = 140;
@@ -44,7 +44,7 @@ public class MusicSelectScreen extends Screen {
         int y = ((this.height-menuHeight)/2) + (spacing/2);
         int itemsInRow = 0;
 
-        for(String song : instrument.getSongs()) {
+        for(String song : songs) {
             if(rows == 1) {
                 if(items != 3) {
                     x = (items == 1) ? (this.width/2 - width/2) : (this.width/2 - width) - spacing/2;
