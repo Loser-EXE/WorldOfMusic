@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -23,11 +24,14 @@ import worldofmusic.item.Instrument;
 import worldofmusic.sound.SongHandler;
 
 import java.util.List;
+import java.util.Objects;
 
 public abstract class MusicianPillagerEntity extends IllagerEntity {
     protected Instrument instrument;
     private SongStatus songStatus = SongStatus.STOPPED;
     private SpawnReason spawnReason;
+    private boolean isOutpostSpawned = false;
+    private List<String> songs;
     private static String raidSong;
     private static String song;
 
@@ -39,19 +43,18 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
     public void tick() {
         super.tick();
 
-        switch (this.songStatus) {
+         switch (this.songStatus) {
             case STOPPED -> {
-                if(this.spawnReason != null) {
-                    List<String> songs;
-                    switch (this.spawnReason) {
-                        case PATROL -> songs = instrument.getSongs(Instrument.PlayCondition.PATROL);
-                        case STRUCTURE -> songs = instrument.getSongs(Instrument.PlayCondition.OUTPOST);
-                        default -> songs = instrument.getSongs(Instrument.PlayCondition.NONE);
-                    }
+                if(isOutpostSpawned && songs == null) {
+                    songs = instrument.getSongs(Instrument.PlayCondition.OUTPOST);
+                }
+
+                if(songs != null) {
                     song = genRandomSong(songs);
                     playSong();
                 }
             }
+
             case FAILED -> {
                 WorldOfMusic.LOGGER.warn("Failed to play song retrying...");
                 playSong();
@@ -61,7 +64,6 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
 
     private void playSong() {
         if (this.world.isClient) return;
-
         this.songStatus = SongStatus.PENDING;
         SongHandler.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
     }
@@ -79,7 +81,20 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
             case 0 -> this.songStatus = SongStatus.PLAYING;
             case 1 -> this.songStatus = SongStatus.FAILED;
             case 2 -> this.songStatus = SongStatus.STOPPED;
+            case 3 -> this.songStatus = SongStatus.ENDED;
         }
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.isOutpostSpawned = nbt.getBoolean("isOutpostSpawned");
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("isOutpostSpawned", this.isOutpostSpawned);
     }
 
     @Override
@@ -96,6 +111,11 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         this.initEquipment(difficulty);
+        if (spawnReason == SpawnReason.PATROL) {
+            songs = instrument.getSongs(Instrument.PlayCondition.PATROL);
+        } else {
+            songs = instrument.getSongs(Instrument.PlayCondition.NONE);
+        }
         this.spawnReason = spawnReason;
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
@@ -140,6 +160,7 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
         PENDING,
         PLAYING,
         STOPPED,
-        FAILED
+        FAILED,
+        ENDED
     }
 }

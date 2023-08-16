@@ -30,7 +30,7 @@ public class WarSongSoundInstance extends MovingSoundInstance {
         this.setDone();
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(this.entity.getId());
-        buf.writeInt(2);
+        buf.writeInt(3);
 
         ClientPlayNetworking.send(ModPackets.PLAY_SONG_STATUS_ID, buf);
     }
