@@ -29,11 +29,6 @@ public class WorldOfMusic implements ModInitializer {
                 .executes(context -> {
                     ServerCommandSource source = context.getSource();
 
-                    if(source.getWorld().getServer().getTicks() < 120000) {
-                        source.getPlayer().sendMessage(Text.of("World needs to be at least 120,000 ticks old!"), false);
-                        return 0;
-                    }
-
                     while(true) {
                         Spawner spawner = new PatrolSpawner();
                         int status = spawner.spawn(source.getWorld(), true, true);
