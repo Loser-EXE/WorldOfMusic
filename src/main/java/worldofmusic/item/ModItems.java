@@ -12,7 +12,7 @@ import worldofmusic.WorldOfMusic;
 import worldofmusic.entity.ModEntities;
 
 public class ModItems {
-    private static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(WorldOfMusic.MOD_ID, "item_group"))
+    public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(WorldOfMusic.MOD_ID, "item_group"))
             .icon(() -> new ItemStack(ModItems.DRUM))
             .build();
 

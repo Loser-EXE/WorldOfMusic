@@ -6,7 +6,7 @@ import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.render.entity.model.IllagerEntityModel;
 import net.minecraft.util.Identifier;
 import worldofmusic.WorldOfMusic;
-import worldofmusic.entity.BagPiperPillagerEntity;
+import worldofmusic.entity.pillager.BagPiperPillagerEntity;
 import worldofmusic.entity.render.model.ModEntitiyModelLayers;
 
 public class BagpiperPillagerEntityRenderer extends IllagerEntityRenderer<BagPiperPillagerEntity> {

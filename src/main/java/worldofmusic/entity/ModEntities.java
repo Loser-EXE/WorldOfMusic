@@ -2,15 +2,17 @@ package worldofmusic.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.entity.mob.IllagerEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import worldofmusic.WorldOfMusic;
+import worldofmusic.entity.pillager.BagPiperPillagerEntity;
+import worldofmusic.entity.pillager.DrummerPillagerEntity;
+import worldofmusic.entity.pillager.FiferPillagerEntity;
+import worldofmusic.entity.pillager.MusicianPillagerEntity;
 
 public class ModEntities {
     public static final EntityType<DrummerPillagerEntity> DRUMMER_PILLAGER_ENTITY = registerEntity("drummer_pillager", DrummerPillagerEntity::new);

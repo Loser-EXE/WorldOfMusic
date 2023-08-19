@@ -1,4 +1,4 @@
-package worldofmusic.entity;
+package worldofmusic.entity.pillager;
 
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;

@@ -8,7 +8,7 @@ import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.render.entity.model.IllagerEntityModel;
 import net.minecraft.util.Identifier;
 import worldofmusic.WorldOfMusic;
-import worldofmusic.entity.MusicianPillagerEntity;
+import worldofmusic.entity.pillager.MusicianPillagerEntity;
 import worldofmusic.entity.render.model.ModEntitiyModelLayers;
 
 @Environment(EnvType.CLIENT)

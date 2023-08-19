@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "worldofmusic:block/musician_workstation"
+  }
+}

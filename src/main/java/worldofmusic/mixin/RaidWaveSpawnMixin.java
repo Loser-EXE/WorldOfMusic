@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import worldofmusic.entity.ModEntities;
-import worldofmusic.entity.MusicianPillagerEntity;
+import worldofmusic.entity.pillager.MusicianPillagerEntity;
 import worldofmusic.item.Instrument;
 import worldofmusic.item.ModItems;
 
