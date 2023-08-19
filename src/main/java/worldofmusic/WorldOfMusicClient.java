@@ -25,6 +25,5 @@ public class WorldOfMusicClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.BAGPIPER_PILLAGER_ENTITY, BagpiperPillagerEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModEntitiyModelLayers.BAGPIPER_PILLAGER_MODEL_LAYER, IllagerEntityModel::getTexturedModelData);
-
     }
 }
