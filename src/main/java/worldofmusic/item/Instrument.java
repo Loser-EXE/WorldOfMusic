@@ -17,6 +17,7 @@ import worldofmusic.WorldOfMusic;
 import worldofmusic.networking.ModPackets;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Instrument extends Item {
@@ -25,6 +26,7 @@ public abstract class Instrument extends Item {
     private final List<String> raidSongs = new ArrayList<>();
     private final List<String> outpostSongs = new ArrayList<>();
     private final List<String> patrolSongs = new ArrayList<>();
+    private final List<String> villageSongs = new ArrayList<>();
 
     public Instrument(Settings settings) {
         super(settings);
@@ -59,22 +61,27 @@ public abstract class Instrument extends Item {
             case PATROL -> {
                 return this.patrolSongs;
             }
+            case VILLAGES -> {
+                return this.villageSongs;
+            }
             default -> {
                 return this.songs;
             }
         }
     }
 
-    protected void register(String song, PlayCondition condition) {
+    protected void register(String song, PlayCondition ... conditions) {
         Identifier identifier = new Identifier(WorldOfMusic.MOD_ID, song + "_" + this.instrument);
         Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
-
         songs.add(song);
 
-        switch (condition) {
-            case RAID -> raidSongs.add(song);
-            case PATROL -> patrolSongs.add(song);
-            case OUTPOST -> outpostSongs.add(song);
+        for(PlayCondition condition : conditions) {
+            switch (condition) {
+                case RAID -> raidSongs.add(song);
+                case PATROL -> patrolSongs.add(song);
+                case OUTPOST -> outpostSongs.add(song);
+                case VILLAGES -> villageSongs.add(song);
+            }
         }
     }
 
@@ -82,6 +89,7 @@ public abstract class Instrument extends Item {
         RAID,
         OUTPOST,
         PATROL,
+        VILLAGES,
         NONE
     }
 }

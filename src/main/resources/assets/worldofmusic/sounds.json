@@ -198,5 +198,10 @@
     "sounds": [
       "worldofmusic:the_black_bear_bagpipes"
     ]
+  },
+  "march_01_handcrafted_drum": {
+    "sounds": [
+      "worldofmusic:"
+    ]
   }
 }

@@ -8,7 +8,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import worldofmusic.networking.ModPackets;
 
-public class SongHandler {
+public class SongManager {
     public static void playSong(LivingEntity entity, String song, String instrument) {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(entity.getId());

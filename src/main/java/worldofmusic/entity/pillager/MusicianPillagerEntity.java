@@ -14,17 +14,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import worldofmusic.WorldOfMusic;
 import worldofmusic.item.Instrument;
-import worldofmusic.sound.SongHandler;
+import worldofmusic.sound.SongManager;
 
 import java.util.List;
-import java.util.Objects;
 
 public abstract class MusicianPillagerEntity extends IllagerEntity {
     protected Instrument instrument;
@@ -65,7 +63,7 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
     private void playSong() {
         if (this.world.isClient) return;
         this.songStatus = SongStatus.PENDING;
-        SongHandler.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
+        SongManager.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
     }
 
     public static void setRaidSong(String song) {
