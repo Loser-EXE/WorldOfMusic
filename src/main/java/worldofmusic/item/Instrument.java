@@ -17,7 +17,6 @@ import worldofmusic.WorldOfMusic;
 import worldofmusic.networking.ModPackets;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class Instrument extends Item {
@@ -70,7 +69,7 @@ public abstract class Instrument extends Item {
         }
     }
 
-    protected void register(String song, PlayCondition ... conditions) {
+    protected void registerSong(String song, PlayCondition ... conditions) {
         Identifier identifier = new Identifier(WorldOfMusic.MOD_ID, song + "_" + this.instrument);
         Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
         songs.add(song);

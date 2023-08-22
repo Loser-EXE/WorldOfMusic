@@ -16,6 +16,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import worldofmusic.WorldOfMusic;
+import worldofmusic.item.Instrument;
 import worldofmusic.networking.ModPackets;
 import worldofmusic.sound.WarSongSoundInstance;
 
@@ -34,7 +35,7 @@ public class PlaySongS2CPacket {
 
         LivingEntity entity = (LivingEntity) handler.getWorld().getEntityById(id);
         if (entity != null) {
-            ItemStack stack = entity.getStackInHand(Hand.MAIN_HAND);
+            ItemStack stack = entity.getMainHandStack().getItem() instanceof Instrument ? entity.getMainHandStack() : entity.getOffHandStack();
             SoundEvent song = Registry.SOUND_EVENT.get(new Identifier(
                     WorldOfMusic.MOD_ID,
                     buf.readString() + "_" + buf.readString()));

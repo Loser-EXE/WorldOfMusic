@@ -33,9 +33,9 @@ public class MusicSelectScreen extends Screen {
         List<String> songs = instrument.getSongs(Instrument.PlayCondition.NONE);
 
         int items = songs.size();
-        int width = 140;
+        int width = 155;
         int height = 20;
-        int spacing = 20;
+        int spacing = 5;
         int rows = (int) Math.ceil(items / 3f);
         int menuWidth = (width + spacing) * 3;
         int menuHeight = ((height + spacing) * rows);
@@ -48,9 +48,7 @@ public class MusicSelectScreen extends Screen {
             if(rows == 1) {
                 if(items != 3) {
                     x = (items == 1) ? (this.width/2 - width/2) : (this.width/2 - width) - spacing/2;
-
                 }
-
                 rows--;
             }
 
@@ -67,7 +65,6 @@ public class MusicSelectScreen extends Screen {
             } else {
                 x += width + spacing;
             }
-
         }
     }
 

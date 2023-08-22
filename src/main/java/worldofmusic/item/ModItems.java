@@ -15,19 +15,15 @@ public class ModItems {
     public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(WorldOfMusic.MOD_ID, "item_group"))
             .icon(() -> new ItemStack(ModItems.DRUM))
             .build();
-
     private static final FabricItemSettings DEFAULT_INSTRUMENT_SETTINGS = new FabricItemSettings()
             .group(ITEM_GROUP)
             .maxCount(1);
-
     public static final Instrument DRUM = (Instrument) register("drum", new DrumItem(DEFAULT_INSTRUMENT_SETTINGS));
-
     public static final Instrument FIFE = (Instrument) register("fife", new FifeItem(DEFAULT_INSTRUMENT_SETTINGS));
-
     public static final Instrument BAGPIPES = (Instrument) register("bagpipes", new BagPipeItem(DEFAULT_INSTRUMENT_SETTINGS));
-
     public static final Instrument BUGLE = (Instrument) register("bugle", new BugleItem(DEFAULT_INSTRUMENT_SETTINGS));
-
+    public static final Instrument HANDCRAFTED_DRUM = (Instrument) register("handcrafted_drum", new HandcraftedDrum(DEFAULT_INSTRUMENT_SETTINGS));
+    public static final Instrument HANDCRAFTED_FIFE = (Instrument) register("handcrafted_fife", new HandcraftedFife(DEFAULT_INSTRUMENT_SETTINGS));
     public static final Item DRUMMER_PILLAGER_SPAWN_EGG = register("drummer_pillager_spawn_egg", new SpawnEggItem(
             ModEntities.DRUMMER_PILLAGER_ENTITY,
             0x4d1593,
@@ -35,7 +31,6 @@ public class ModItems {
             new FabricItemSettings()
                     .group(ITEM_GROUP)
     ));
-
     public static final Item FIFER_PILLAGER_SPAWN_EGG = register("fifer_pillager_spawn_egg", new SpawnEggItem(
             ModEntities.FIFER_PILLAGER_ENTITY,
             0xbb1850,
@@ -43,7 +38,6 @@ public class ModItems {
             new FabricItemSettings()
                     .group(ITEM_GROUP)
     ));
-
     public static final Item BAGPIPER_PILLAGER_SPAWN_EGG = register("bagpiper_pillager_spawn_egg", new SpawnEggItem(
             ModEntities.BAGPIPER_PILLAGER_ENTITY,
             0x62a036,
@@ -51,7 +45,6 @@ public class ModItems {
             new FabricItemSettings()
                     .group(ITEM_GROUP)
     ));
-
 
     private static Item register(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(WorldOfMusic.MOD_ID, name), item);
