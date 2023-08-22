@@ -19,7 +19,6 @@ import java.util.List;
 
 @Environment(EnvType.CLIENT)
 public class MusicSelectScreen extends Screen {
-    private final List<ButtonWidget> buttons = new ArrayList<>();
     private final Instrument instrument;
 
     public MusicSelectScreen(int itemId) {
@@ -52,7 +51,7 @@ public class MusicSelectScreen extends Screen {
                 rows--;
             }
 
-            buttons.add(this.addDrawableChild(new ButtonWidget(x, y, width, height, new TranslatableText("menu." + song), (button -> playSong(song)))));
+            this.addDrawableChild(new ButtonWidget(x, y, width, height, new TranslatableText("menu." + song), (button -> playSong(song))));
             itemsInRow++;
             items--;
 
@@ -66,14 +65,13 @@ public class MusicSelectScreen extends Screen {
                 x += width + spacing;
             }
         }
+
+        this.addDrawableChild(new ButtonWidget(this.width - 55, 5, 50, 20, new TranslatableText("menu.close"), (button -> this.close())));
     }
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         this.renderBackground(matrices);
-        for(ButtonWidget button : buttons) {
-            button.render(matrices, mouseX, mouseY, delta);
-        }
         super.render(matrices, mouseX, mouseY, delta);
     }
 
