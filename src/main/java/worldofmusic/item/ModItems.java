@@ -24,6 +24,11 @@ public class ModItems {
     public static final Instrument BUGLE = (Instrument) register("bugle", new BugleItem(DEFAULT_INSTRUMENT_SETTINGS));
     public static final Instrument HANDCRAFTED_DRUM = (Instrument) register("handcrafted_drum", new HandcraftedDrum(DEFAULT_INSTRUMENT_SETTINGS));
     public static final Instrument HANDCRAFTED_FIFE = (Instrument) register("handcrafted_fife", new HandcraftedFife(DEFAULT_INSTRUMENT_SETTINGS));
+    public static final Instrument BALALAIKA = (Instrument) register("balalaika", new BalalaikaItem(DEFAULT_INSTRUMENT_SETTINGS));
+    public static final Instrument BANJO = (Instrument) register("banjo", new BanjoItem(DEFAULT_INSTRUMENT_SETTINGS));
+    public static final Instrument BONGOS = (Instrument) register("bongos", new BongosItem(DEFAULT_INSTRUMENT_SETTINGS));
+    public static final Instrument GUITAR = (Instrument) register("guitar", new GuitarItem(DEFAULT_INSTRUMENT_SETTINGS));
+    public static final Instrument REED_PIPE = (Instrument) register("reed_pipe", new ReedPipeItem(DEFAULT_INSTRUMENT_SETTINGS));
     public static final Item DRUMMER_PILLAGER_SPAWN_EGG = register("drummer_pillager_spawn_egg", new SpawnEggItem(
             ModEntities.DRUMMER_PILLAGER_ENTITY,
             0x4d1593,
