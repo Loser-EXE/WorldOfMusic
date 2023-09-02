@@ -259,6 +259,11 @@
       "worldofmusic:since_us_guitar"
     ]
   },
+  "godzilla_theme_guitar": {
+    "sounds": [
+      "worldofmusic:godzilla_theme_guitar"
+    ]
+  },
   "on_the_farm_reed_pipe": {
     "sounds": [
       "worldofmusic:on_the_farm_reed_pipe"
@@ -272,6 +277,11 @@
   "kalinka_balalaika": {
     "sounds": [
       "worldofmusic:kalinka_balalaika"
+    ]
+  },
+  "amazing_grace_tin_whistle": {
+    "sounds": [
+      "worldofmusic:amazing_grace_tin_whistle"
     ]
   }
 }

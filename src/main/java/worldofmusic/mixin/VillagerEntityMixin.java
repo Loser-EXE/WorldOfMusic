@@ -31,7 +31,7 @@ public abstract class VillagerEntityMixin {
 
         switch(villagerData.getType().toString()) {
             case("taiga") -> instrument = ModItems.BAGPIPES;
-            case("plains") -> instrument = ModItems.GUITAR;
+            case("plains") -> instrument = ModItems.TIN_WHISTLE;
             case("snow") -> instrument = ModItems.BALALAIKA; // lower sound
             case("desert") -> instrument = ModItems.REED_PIPE; // lower sound
             case("jungle") -> instrument = ModItems.BONGOS;
