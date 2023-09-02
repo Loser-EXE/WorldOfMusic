@@ -5,6 +5,7 @@ public class GuitarItem extends Instrument {
         super(settings);
         instrument = "guitar";
 
-        registerSong("since_us", PlayCondition.VILLAGES);
+        registerSong("since_us");
+        registerSong("godzilla_theme");
     }
 }
