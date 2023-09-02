@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import worldofmusic.WorldOfMusic;
 import worldofmusic.item.Instrument;
-import worldofmusic.sound.SongManager;
+import worldofmusic.sound.SongHelper;
 
 import java.util.List;
 
@@ -48,7 +48,7 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
                 }
 
                 if(songs != null) {
-                    song = genRandomSong(songs);
+                    song = SongHelper.genRandomSong(songs);
                     playSong();
                 }
             }
@@ -63,15 +63,11 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
     private void playSong() {
         if (this.world.isClient) return;
         this.songStatus = SongStatus.PENDING;
-        SongManager.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
+        SongHelper.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
     }
 
     public static void setRaidSong(String song) {
         raidSong = song;
-    }
-
-    public static String genRandomSong(List<String> songs) {
-        return songs.get((int) Math.floor(Math.random() * songs.size()));
     }
 
     public void setSongStatus(int status) {

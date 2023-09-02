@@ -5,10 +5,10 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
-import worldofmusic.sound.SongManager;
+import worldofmusic.sound.SongHelper;
 
 public class PlaySelectedSongC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender responseSender) {
-        SongManager.playSong(player, buf.readString(), buf.readString());
+        SongHelper.playSong(player, buf.readString(), buf.readString());
     }
 }

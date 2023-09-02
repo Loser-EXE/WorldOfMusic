@@ -248,5 +248,30 @@
     "sounds": [
       "worldofmusic:march_05_handcrafted_fife"
     ]
+  },
+  "solo_bongos": {
+    "sounds": [
+      "worldofmusic:solo_bongos"
+    ]
+  },
+  "since_us_guitar": {
+    "sounds": [
+      "worldofmusic:since_us_guitar"
+    ]
+  },
+  "on_the_farm_reed_pipe": {
+    "sounds": [
+      "worldofmusic:on_the_farm_reed_pipe"
+    ]
+  },
+  "arkansas_traveler_banjo": {
+    "sounds": [
+      "worldofmusic:arkansas_traveler_banjo"
+    ]
+  },
+  "kalinka_balalaika": {
+    "sounds": [
+      "worldofmusic:kalinka_balalaika"
+    ]
   }
 }

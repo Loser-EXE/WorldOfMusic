@@ -8,7 +8,9 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import worldofmusic.networking.ModPackets;
 
-public class SongManager {
+import java.util.List;
+
+public class SongHelper {
     public static void playSong(LivingEntity entity, String song, String instrument) {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeInt(entity.getId());
@@ -20,5 +22,9 @@ public class SongManager {
                 ServerPlayNetworking.send(player, ModPackets.PLAY_SONG_ID, buf);
             }
         }
+    }
+
+    public static String genRandomSong(List<String> songs) {
+        return songs.get((int) Math.floor(Math.random() * songs.size()));
     }
 }

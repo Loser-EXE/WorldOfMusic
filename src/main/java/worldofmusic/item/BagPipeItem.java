@@ -15,6 +15,6 @@ public class BagPipeItem extends Instrument{
         registerSong("cock_o_the_north");
         registerSong("lilliburlero");
         registerSong("scotland_the_brave");
-        registerSong("the_black_bear");
+        registerSong("the_black_bear", PlayCondition.VILLAGES);
     }
 }

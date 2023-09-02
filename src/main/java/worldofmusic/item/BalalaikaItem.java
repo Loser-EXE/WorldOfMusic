@@ -5,6 +5,6 @@ public class BalalaikaItem extends Instrument {
         super(settings);
         instrument = "balalaika";
 
-
+        registerSong("kalinka", PlayCondition.VILLAGES);
     }
 }
