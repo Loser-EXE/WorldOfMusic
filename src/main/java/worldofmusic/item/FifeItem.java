@@ -15,5 +15,20 @@ public class FifeItem extends Instrument {
         registerSong("le_pas_cadence", PlayCondition.OUTPOST);
         registerSong("aux_champs", PlayCondition.OUTPOST);
         registerSong("hohenfriedeberger");
+        registerSong("grenadiersmarsch");
+        registerSong("coburger_marsch");
+        registerSong("pappenheimer");
+        registerSong("prinz_von_eugen");
+        registerSong("pariser_einzugsmarsch");
+        registerSong("marsch_der_spielleute");
+        registerSong("rule_britannia");
+        registerSong("lockmarsch");
+        registerSong("march_of_attacking");
+        registerSong("semenovsky");
+        registerSong("praesentiermarsch");
+        registerSong("izmailovsky");
+        registerSong("preobrazhensky");
+        registerSong("grenadiers");
+        registerSong("yorckscher");
     }
 }

@@ -1,4 +1,19 @@
 {
+  "signal_drummers_call_drum": {
+    "sounds": [
+      "worldofmusic:signal_drummers_call_drum"
+    ]
+  },
+  "signal_cease_fire_drum": {
+    "sounds": [
+      "worldofmusic:signal_cease_fire_drum"
+    ]
+  },
+  "signal_camp_taps_drum": {
+    "sounds": [
+      "worldofmusic:signal_camp_taps_drum"
+    ]
+  },
   "men_of_harlech_drum": {
     "sounds": [
       "worldofmusic:men_of_harlech_drum"
@@ -119,39 +134,154 @@
       "worldofmusic:hohenfriedeberger_fife"
     ]
   },
-  "to_the_color_bugle": {
+  "grenadiersmarsch_drum": {
     "sounds": [
-      "worldofmusic:to_the_color_bugle"
+      "worldofmusic:grenadiersmarsch_drum"
     ]
   },
-  "reveille_bugle": {
+  "grenadiersmarsch_fife": {
     "sounds": [
-      "worldofmusic:reveille_bugle"
+      "worldofmusic:grenadiersmarsch_fife"
     ]
   },
-  "la_marche_bugle": {
+  "coburger_marsch_drum": {
     "sounds": [
-      "worldofmusic:la_marche_bugle"
+      "worldofmusic:coburger_marsch_drum"
     ]
   },
-  "dans_le_hussards_bugle": {
+  "coburger_marsch_fife": {
     "sounds": [
-      "worldofmusic:dans_le_hussards_bugle"
+      "worldofmusic:coburger_marsch_fife"
     ]
   },
-  "charge_orders_bugle": {
+  "pappenheimer_drum": {
     "sounds": [
-      "worldofmusic:charge_orders_bugle"
+      "worldofmusic:pappenheimer_drum"
     ]
   },
-  "british_light_infantry_bugle": {
+  "pappenheimer_fife": {
     "sounds": [
-      "worldofmusic:british_light_infantry_bugle"
+      "worldofmusic:pappenheimer_fife"
     ]
   },
-  "british_boots_bugle": {
+  "prinz_von_eugen_drum": {
     "sounds": [
-      "worldofmusic:british_boots_bugle"
+      "worldofmusic:prinz_von_eugen_drum"
+    ]
+  },
+  "prinz_von_eugen_fife": {
+    "sounds": [
+      "worldofmusic:prinz_von_eugen_fife"
+    ]
+  },
+  "rule_britannia_drum": {
+    "sounds": [
+      "worldofmusic:rule_britannia_drum"
+    ]
+  },
+  "rule_britannia_fife": {
+    "sounds": [
+      "worldofmusic:rule_britannia_fife"
+    ]
+  },
+  "pariser_einzugsmarsch_drum": {
+    "sounds": [
+      "worldofmusic:pariser_einzugsmarsch_drum"
+    ]
+  },
+  "pariser_einzugsmarsch_fife": {
+    "sounds": [
+      "worldofmusic:pariser_einzugsmarsch_fife"
+    ]
+  },
+  "marsch_der_spielleute_drum": {
+    "sounds": [
+      "worldofmusic:marsch_der_spielleute_drum"
+    ]
+  },
+  "marsch_der_spielleute_fife": {
+    "sounds": [
+      "worldofmusic:marsch_der_spielleute_fife"
+    ]
+  },
+  "lockmarsch_drum": {
+    "sounds": [
+      "worldofmusic:lockmarsch_drum"
+    ]
+  },
+  "lockmarsch_fife": {
+    "sounds": [
+      "worldofmusic:lockmarsch_fife"
+    ]
+  },
+  "march_of_attacking_drum": {
+    "sounds": [
+      "worldofmusic:march_of_attacking_drum"
+    ]
+  },
+  "march_of_attacking_fife": {
+    "sounds": [
+      "worldofmusic:march_of_attacking_fife"
+    ]
+  },
+  "semenovsky_drum": {
+    "sounds": [
+      "worldofmusic:semenovsky_drum"
+    ]
+  },
+  "semenovsky_fife": {
+    "sounds": [
+      "worldofmusic:semenovsky_fife"
+    ]
+  },
+  "praesentiermarsch_drum": {
+    "sounds": [
+      "worldofmusic:praesentiermarsch_drum"
+    ]
+  },
+  "praesentiermarsch_fife": {
+    "sounds": [
+      "worldofmusic:praesentiermarsch_fife"
+    ]
+  },
+  "izmailovsky_drum": {
+    "sounds": [
+      "worldofmusic:izmailovsky_drum"
+    ]
+  },
+  "izmailovsky_fife": {
+    "sounds": [
+      "worldofmusic:izmailovsky_fife"
+    ]
+  },
+  "preobrazhensky_drum": {
+    "sounds": [
+      "worldofmusic:preobrazhensky_drum"
+    ]
+  },
+  "preobrazhensky_fife": {
+    "sounds": [
+      "worldofmusic:preobrazhensky_fife"
+    ]
+  },
+  "grenadiers_drum": {
+    "sounds": [
+      "worldofmusic:grenadiers_drum"
+    ]
+  },
+  "grenadiers_fife": {
+    "sounds": [
+      "worldofmusic:grenadiers_fife"
+    ]
+  },
+  "yorckscher_drum": {
+    "sounds": [
+      "worldofmusic:yorckscher_drum"
+    ]
+  },
+  "yorckscher_fife": {
+    "sounds": [
+      "worldofmusic:yorckscher_fife"
     ]
   },
   "amazing_grace_bagpipes": {
@@ -159,14 +289,29 @@
       "worldofmusic:amazing_grace_bagpipes"
     ]
   },
-  "ballad_of_glencoe_bagpipes": {
-    "sounds": [
-      "worldofmusic:ballad_of_glencoe_bagpipes"
-    ]
-  },
   "balmoral_bagpipes": {
     "sounds": [
       "worldofmusic:balmoral_bagpipes"
+    ]
+  },
+  "cock_o_the_north_bagpipes": {
+    "sounds": [
+      "worldofmusic:cock_o_the_north_bagpipes"
+    ]
+  },
+  "scotland_the_brave_bagpipes": {
+    "sounds": [
+      "worldofmusic:scotland_the_brave_bagpipes"
+    ]
+  },
+  "the_black_bear_bagpipes": {
+    "sounds": [
+      "worldofmusic:the_black_bear_bagpipes"
+    ]
+  },
+  "ballad_of_glencoe_bagpipes": {
+    "sounds": [
+      "worldofmusic:ballad_of_glencoe_bagpipes"
     ]
   },
   "battle_of_the_somme_bagpipes": {
@@ -179,24 +324,129 @@
       "worldofmusic:battle_of_waterloo_bagpipes"
     ]
   },
-  "cock_o_the_north_bagpipes": {
-    "sounds": [
-      "worldofmusic:cock_o_the_north_bagpipes"
-    ]
-  },
   "lilliburlero_bagpipes": {
     "sounds": [
       "worldofmusic:lilliburlero_bagpipes"
     ]
   },
-  "scotland_the_brave_bagpipes": {
+  "highlandcathedral_bagpipes": {
     "sounds": [
-      "worldofmusic:scotland_the_brave_bagpipes"
+      "worldofmusic:highlandcathedral_bagpipes"
     ]
   },
-  "the_black_bear_bagpipes": {
+  "myhome_bagpipes": {
     "sounds": [
-      "worldofmusic:the_black_bear_bagpipes"
+      "worldofmusic:myhome_bagpipes"
+    ]
+  },
+  "skyeboatsong_bagpipes": {
+    "sounds": [
+      "worldofmusic:skyeboatsong_bagpipes"
+    ]
+  },
+  "la_marche_bugle": {
+    "sounds": [
+      "worldofmusic:la_marche_bugle"
+    ]
+  },
+  "dans_le_hussards_bugle": {
+    "sounds": [
+      "worldofmusic:dans_le_hussards_bugle"
+    ]
+  },
+  "british_light_infantry_bugle": {
+    "sounds": [
+      "worldofmusic:british_light_infantry_bugle"
+    ]
+  },
+  "british_boots_bugle": {
+    "sounds": [
+      "worldofmusic:british_boots_bugle"
+    ]
+  },
+  "to_the_color_bugle": {
+    "sounds": [
+      "worldofmusic:to_the_color_bugle"
+    ]
+  },
+  "reveille_bugle": {
+    "sounds": [
+      "worldofmusic:reveille_bugle"
+    ]
+  },
+  "charge_orders_bugle": {
+    "sounds": [
+      "worldofmusic:charge_orders_bugle"
+    ]
+  },
+  "leban_bugle": {
+    "sounds": [
+      "worldofmusic:leban_bugle"
+    ]
+  },
+  "strauch_bugle": {
+    "sounds": [
+      "worldofmusic:strauch_bugle"
+    ]
+  },
+  "assamble_call_bugle": {
+    "sounds": [
+      "worldofmusic:assamble_call_bugle"
+    ]
+  },
+  "closeranks_call_bugle": {
+    "sounds": [
+      "worldofmusic:closeranks_call_bugle"
+    ]
+  },
+  "extend_call_bugle": {
+    "sounds": [
+      "worldofmusic:extend_call_bugle"
+    ]
+  },
+  "fire_call_bugle": {
+    "sounds": [
+      "worldofmusic:fire_call_bugle"
+    ]
+  },
+  "danslehussards_bugle": {
+    "sounds": [
+      "worldofmusic:danslehussards_bugle"
+    ]
+  },
+  "ontheenemy_call_bugle": {
+    "sounds": [
+      "worldofmusic:ontheenemy_call_bugle"
+    ]
+  },
+  "althessischer_bugle": {
+    "sounds": [
+      "worldofmusic:althessischer_bugle"
+    ]
+  },
+  "fehrbell_bugle": {
+    "sounds": [
+      "worldofmusic:fehrbell_bugle"
+    ]
+  },
+  "freiwilligen_bugle": {
+    "sounds": [
+      "worldofmusic:freiwilligen_bugle"
+    ]
+  },
+  "jaegers_bugle": {
+    "sounds": [
+      "worldofmusic:jaegers_bugle"
+    ]
+  },
+  "marchartillery_bugle": {
+    "sounds": [
+      "worldofmusic:marchartillery_bugle"
+    ]
+  },
+  "musketeers_bugle": {
+    "sounds": [
+      "worldofmusic:musketeers_bugle"
     ]
   },
   "march_01_handcrafted_drum": {

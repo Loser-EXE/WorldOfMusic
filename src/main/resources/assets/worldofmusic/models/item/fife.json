@@ -1,6 +1,55 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "worldofmusic:item/fife"
-  }
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "worldofmusic:item/fife",
+		"particle": "worldofmusic:item/fife"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [10, 27, 10],
+			"faces": {
+				"north": {"uv": [0, 0, 1.5, 13.5], "texture": "#0"},
+				"east": {"uv": [1.5, 0, 3, 13.5], "texture": "#0"},
+				"south": {"uv": [3, 0, 4.5, 13.5], "texture": "#0"},
+				"west": {"uv": [4.5, 0, 6, 13.5], "texture": "#0"},
+				"up": {"uv": [7.5, 1.5, 6, 0], "texture": "#0"},
+				"down": {"uv": [7.5, 1.5, 6, 3], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 180, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 180, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [180, 0, 180],
+			"translation": [2, 1, 0],
+			"scale": [0.5, 0.5, 0.25]
+		},
+		"firstperson_lefthand": {
+			"rotation": [180, 0, 180],
+			"translation": [2, 1, 0],
+			"scale": [0.5, 0.5, 0.25]
+		},
+		"ground": {
+			"rotation": [90, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [180, -22, 136],
+			"translation": [1.75, -1.5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"fixed": {
+			"translation": [-0.75, -3.5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	}
 }
