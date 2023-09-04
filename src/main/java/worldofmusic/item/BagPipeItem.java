@@ -7,17 +7,17 @@ public class BagPipeItem extends Instrument{
 
         registerSong("bonnie_dundee", PlayCondition.RAID);
         registerSong("blue_bonnets_over_the_border", PlayCondition.RAID);
-        registerSong("amazing_grace");
-        registerSong("ballad_of_glencoe");
-        registerSong("balmoral");
-        registerSong("battle_of_the_somme");
-        registerSong("battle_of_waterloo");
-        registerSong("cock_o_the_north");
-        registerSong("lilliburlero");
-        registerSong("scotland_the_brave");
+        registerSong("amazing_grace", PlayCondition.VILLAGES);
+        registerSong("ballad_of_glencoe", PlayCondition.VILLAGES);
+        registerSong("balmoral", PlayCondition.VILLAGES);
+        registerSong("battle_of_the_somme", PlayCondition.VILLAGES);
+        registerSong("battle_of_waterloo", PlayCondition.VILLAGES);
+        registerSong("cock_o_the_north", PlayCondition.VILLAGES);
+        registerSong("lilliburlero", PlayCondition.VILLAGES, PlayCondition.RAID);
+        registerSong("scotland_the_brave", PlayCondition.VILLAGES);
         registerSong("the_black_bear", PlayCondition.VILLAGES);
-        registerSong("highlandcathedral");
-        registerSong("myhome");
-        registerSong("skyeboatsong");
+        registerSong("highlandcathedral", PlayCondition.VILLAGES);
+        registerSong("myhome", PlayCondition.VILLAGES);
+        registerSong("skyeboatsong", PlayCondition.VILLAGES);
     }
 }
