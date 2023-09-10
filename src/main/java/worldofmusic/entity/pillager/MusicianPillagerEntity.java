@@ -66,6 +66,10 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
         SongHelper.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
     }
 
+    public Instrument getInstrument() {
+        return this.instrument;
+    }
+
     public static void setRaidSong(String song) {
         raidSong = song;
     }
@@ -143,11 +147,6 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
     @Override
     public SoundEvent getCelebratingSound() {
         return SoundEvents.ENTITY_PILLAGER_CELEBRATE;
-    }
-
-    @Override
-    public State getState() {
-        return State.NEUTRAL;
     }
 
     public enum SongStatus {

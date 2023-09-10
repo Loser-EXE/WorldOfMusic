@@ -10,12 +10,12 @@ import net.minecraft.util.Identifier;
 import worldofmusic.WorldOfMusic;
 import worldofmusic.entity.pillager.MusicianPillagerEntity;
 import worldofmusic.entity.render.model.ModEntitiyModelLayers;
+import worldofmusic.entity.render.model.MusicianEntityModel;
 
 @Environment(EnvType.CLIENT)
-public class DrummerPillagerEntityRenderer extends IllagerEntityRenderer<MusicianPillagerEntity> {
+public class DrummerPillagerEntityRenderer extends MusicianEntityRenderer<MusicianPillagerEntity> {
     public DrummerPillagerEntityRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx, new IllagerEntityModel<>(ctx.getPart(ModEntitiyModelLayers.DRUMMER_PILLAGER_MODEL_LAYER)), 0.5f);
-        this.addFeature(new HeldItemFeatureRenderer<>(this));
+        super(ctx, new MusicianEntityModel<>(ctx.getPart(ModEntitiyModelLayers.DRUMMER_PILLAGER_MODEL_LAYER)));
     }
 
     @Override

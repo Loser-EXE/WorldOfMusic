@@ -1,18 +1,15 @@
 package worldofmusic.entity.render;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.IllagerEntityRenderer;
-import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
-import net.minecraft.client.render.entity.model.IllagerEntityModel;
 import net.minecraft.util.Identifier;
 import worldofmusic.WorldOfMusic;
 import worldofmusic.entity.pillager.BagPiperPillagerEntity;
 import worldofmusic.entity.render.model.ModEntitiyModelLayers;
+import worldofmusic.entity.render.model.MusicianEntityModel;
 
-public class BagpiperPillagerEntityRenderer extends IllagerEntityRenderer<BagPiperPillagerEntity> {
+public class BagpiperPillagerEntityRenderer extends MusicianEntityRenderer<BagPiperPillagerEntity> {
     public BagpiperPillagerEntityRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx, new IllagerEntityModel<>(ctx.getPart(ModEntitiyModelLayers.BAGPIPER_PILLAGER_MODEL_LAYER)), 0.5f);
-        this.addFeature(new HeldItemFeatureRenderer<>(this));
+        super(ctx, new MusicianEntityModel<>(ctx.getPart(ModEntitiyModelLayers.BAGPIPER_PILLAGER_MODEL_LAYER)));
     }
 
     @Override
