@@ -8,9 +8,9 @@ import worldofmusic.WorldOfMusic;
 
 @Environment(EnvType.CLIENT)
 public class ModEntitiyModelLayers {
-    public static final EntityModelLayer DRUMMER_PILLAGER_MODEL_LAYER = registerMain("drummer_pillager");
-    public static final EntityModelLayer FIFER_PILLAGER_MODEL_LAYER = registerMain("fifer_pillager");
-    public static final EntityModelLayer BAGPIPER_PILLAGER_MODEL_LAYER = registerMain("bagpiper_pillager");
+    public static final EntityModelLayer DRUMMER_PILLAGER = registerMain("drummer_pillager");
+    public static final EntityModelLayer FIFER_PILLAGER = registerMain("fifer_pillager");
+    public static final EntityModelLayer BAGPIPER_PILLAGER = registerMain("bagpiper_pillager");
 
     private static EntityModelLayer registerMain(String name) {
         return new EntityModelLayer(new Identifier(WorldOfMusic.MOD_ID, name), "main");

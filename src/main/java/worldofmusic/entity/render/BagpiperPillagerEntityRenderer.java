@@ -9,7 +9,7 @@ import worldofmusic.entity.render.model.MusicianEntityModel;
 
 public class BagpiperPillagerEntityRenderer extends MusicianEntityRenderer<BagPiperPillagerEntity> {
     public BagpiperPillagerEntityRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx, new MusicianEntityModel<>(ctx.getPart(ModEntitiyModelLayers.BAGPIPER_PILLAGER_MODEL_LAYER)));
+        super(ctx, new MusicianEntityModel<>(ctx.getPart(ModEntitiyModelLayers.BAGPIPER_PILLAGER)));
     }
 
     @Override

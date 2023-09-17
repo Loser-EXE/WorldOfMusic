@@ -17,20 +17,26 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import worldofmusic.WorldOfMusic;
 import worldofmusic.networking.ModPackets;
+import worldofmusic.sound.SongManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public abstract class Instrument extends Item {
     protected String instrument;
-    private final List<String> songs = new ArrayList<>();
-    private final List<String> raidSongs = new ArrayList<>();
-    private final List<String> outpostSongs = new ArrayList<>();
-    private final List<String> patrolSongs = new ArrayList<>();
-    private final List<String> villageSongs = new ArrayList<>();
+    private final Map<PlayCondition, List<String>> songs = new HashMap<>();
 
     public Instrument(Settings settings) {
         super(settings);
+
+        songs.put(PlayCondition.NONE, new ArrayList<>());
+        songs.put(PlayCondition.RAID, new ArrayList<>());
+        songs.put(PlayCondition.OUTPOST, new ArrayList<>());
+        songs.put(PlayCondition.PATROL, new ArrayList<>());
+        songs.put(PlayCondition.VILLAGES, new ArrayList<>());
+
     }
 
     @Override
@@ -42,7 +48,7 @@ public abstract class Instrument extends Item {
 
         ServerPlayNetworking.send(
                 (ServerPlayerEntity) user,
-                ModPackets.OPEN_MUSIC_SELECT_SCREEN_ID, buf);
+                ModPackets.OPEN_MUSIC_SELECT_SCREEN, buf);
 
         return TypedActionResult.success(user.getStackInHand(hand));
     }
@@ -57,37 +63,17 @@ public abstract class Instrument extends Item {
     }
 
     public List<String> getSongs(PlayCondition condition) {
-        switch (condition) {
-            case RAID -> {
-                return this.raidSongs;
-            }
-            case OUTPOST -> {
-                return this.outpostSongs;
-            }
-            case PATROL -> {
-                return this.patrolSongs;
-            }
-            case VILLAGES -> {
-                return this.villageSongs;
-            }
-            default -> {
-                return this.songs;
-            }
-        }
+        return songs.get(condition);
     }
 
     protected void registerSong(String song, PlayCondition ... conditions) {
         Identifier identifier = new Identifier(WorldOfMusic.MOD_ID, song + "_" + this.instrument);
         Registry.register(Registry.SOUND_EVENT, identifier, new SoundEvent(identifier));
-        songs.add(song);
+        SongManager.addSongInstrument(song, getInstrumentName());
+        songs.get(PlayCondition.NONE).add(song);
 
         for(PlayCondition condition : conditions) {
-            switch (condition) {
-                case RAID -> raidSongs.add(song);
-                case PATROL -> patrolSongs.add(song);
-                case OUTPOST -> outpostSongs.add(song);
-                case VILLAGES -> villageSongs.add(song);
-            }
+            songs.get(condition).add(song);
         }
     }
 

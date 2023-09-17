@@ -10,9 +10,7 @@ import net.minecraft.client.render.entity.model.ModelWithHead;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.Vec3f;
 import worldofmusic.item.Instrument;
@@ -30,14 +28,17 @@ public class InstrumentFeatureRenderer<T extends LivingEntity, M extends EntityM
         instrument = (Instrument) stack.getItem();
 
         matrices.push();
-        this.getContextModel().setArmAngle(arm, matrices);
         float headYaw = ((ModelWithHead)this.getContextModel()).getHead().yaw;
 
         if(instrument == ModItems.FIFE) {
+            this.getContextModel().setArmAngle(arm, matrices);
             matrices.translate(0, 0.27, -0.35);
             matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(147));
             matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(0));
-            matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(-60 + (headYaw * 60)));
+            matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(-60 + ((headYaw < 0.5 ? headYaw : 0.5f) * 60)));
+        } else if(instrument == ModItems.DRUM) {
+            matrices.translate(0, 0.7, -0.5);
+            matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(-180));
         }
 
         MinecraftClient.getInstance().getHeldItemRenderer().renderItem(entity, stack, transformationMode, false, matrices, vertexConsumers, light);

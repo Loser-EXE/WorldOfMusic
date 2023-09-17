@@ -4,8 +4,6 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.Element;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
@@ -17,7 +15,6 @@ import worldofmusic.item.Instrument;
 import worldofmusic.networking.ModPackets;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Environment(EnvType.CLIENT)
@@ -108,8 +105,7 @@ public class MusicSelectScreen extends Screen {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeString(song);
         buf.writeString(this.instrument.getInstrumentName());
-        ClientPlayNetworking.send(ModPackets.PLAY_SELECTED_SONG_ID, buf);
-
+        ClientPlayNetworking.send(ModPackets.PLAY_SELECTED_SONG, buf);
         this.close();
     }
 }

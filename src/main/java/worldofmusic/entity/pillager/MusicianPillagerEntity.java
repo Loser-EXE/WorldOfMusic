@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import worldofmusic.WorldOfMusic;
 import worldofmusic.item.Instrument;
-import worldofmusic.sound.SongHelper;
+import worldofmusic.sound.SongManager;
 
 import java.util.List;
 
@@ -35,64 +35,6 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
 
     public MusicianPillagerEntity(EntityType<? extends IllagerEntity> entityType, World world) {
         super(entityType, world);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-
-         switch (this.songStatus) {
-            case STOPPED -> {
-                if(isOutpostSpawned && songs == null) {
-                    songs = instrument.getSongs(Instrument.PlayCondition.OUTPOST);
-                }
-
-                if(songs != null) {
-                    song = SongHelper.genRandomSong(songs);
-                    playSong();
-                }
-            }
-
-            case FAILED -> {
-                WorldOfMusic.LOGGER.warn("Failed to play song retrying...");
-                playSong();
-            }
-        }
-    }
-
-    private void playSong() {
-        if (this.world.isClient) return;
-        this.songStatus = SongStatus.PENDING;
-        SongHelper.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
-    }
-
-    public Instrument getInstrument() {
-        return this.instrument;
-    }
-
-    public static void setRaidSong(String song) {
-        raidSong = song;
-    }
-
-    public void setSongStatus(int status) {
-        switch (status) {
-            case 0 -> this.songStatus = SongStatus.PLAYING;
-            case 1 -> this.songStatus = SongStatus.FAILED;
-            case 2 -> this.songStatus = SongStatus.STOPPED;
-            case 3 -> this.songStatus = SongStatus.ENDED;
-        }
-    }
-
-    @Override
-    public void readCustomDataFromNbt(NbtCompound nbt) {
-        super.readCustomDataFromNbt(nbt);
-        this.isOutpostSpawned = nbt.getBoolean("isOutpostSpawned");
-    }
-
-    @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        super.writeCustomDataToNbt(nbt);
-        nbt.putBoolean("isOutpostSpawned", this.isOutpostSpawned);
     }
 
     @Override
@@ -123,14 +65,68 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
         this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(instrument));
     }
 
+    @Override
+    public void tick() {
+        super.tick();
+
+         switch (this.songStatus) {
+            case STOPPED -> {
+                if(isOutpostSpawned && songs == null) {
+                    songs = instrument.getSongs(Instrument.PlayCondition.OUTPOST);
+                }
+
+                if(songs != null) {
+                    song = SongManager.genRandomSong(songs);
+                    playSong();
+                }
+            }
+
+            case FAILED -> {
+                WorldOfMusic.LOGGER.warn("Failed to play song retrying...");
+                playSong();
+            }
+        }
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.isOutpostSpawned = nbt.getBoolean("isOutpostSpawned");
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("isOutpostSpawned", this.isOutpostSpawned);
+    }
+
+    private void playSong() {
+        if (this.world.isClient) return;
+        this.songStatus = SongStatus.PENDING;
+        SongManager.playSong(this, (this.spawnReason == SpawnReason.EVENT) ? raidSong : song, instrument.getInstrumentName());
+    }
+
+    public Instrument getInstrument() {
+        return this.instrument;
+    }
+
+    public static void setRaidSong(String song) {
+        raidSong = song;
+    }
+
+    public void setSongStatus(int status) {
+        switch (status) {
+            case 0 -> this.songStatus = SongStatus.PLAYING;
+            case 1 -> this.songStatus = SongStatus.FAILED;
+            case 2 -> this.songStatus = SongStatus.STOPPED;
+            case 3 -> this.songStatus = SongStatus.ENDED;
+        }
+    }
+
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3499999940395355).add(EntityAttributes.GENERIC_MAX_HEALTH, 24.0);
     }
 
-    @Override
-    public void addBonusForWave(int wave, boolean unused) {
-
-    }
 
     protected SoundEvent getAmbientSound() {
         return SoundEvents.ENTITY_PILLAGER_AMBIENT;
@@ -148,6 +144,9 @@ public abstract class MusicianPillagerEntity extends IllagerEntity {
     public SoundEvent getCelebratingSound() {
         return SoundEvents.ENTITY_PILLAGER_CELEBRATE;
     }
+
+    @Override
+    public void addBonusForWave(int wave, boolean unused) { }
 
     public enum SongStatus {
         PENDING,

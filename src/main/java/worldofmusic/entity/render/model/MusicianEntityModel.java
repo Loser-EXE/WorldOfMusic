@@ -1,12 +1,10 @@
 package worldofmusic.entity.render.model;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3f;
 import worldofmusic.entity.pillager.MusicianPillagerEntity;
 import worldofmusic.item.Instrument;
 import worldofmusic.item.ModItems;
@@ -21,7 +19,6 @@ public class MusicianEntityModel<T extends MusicianPillagerEntity> extends Singl
     private final ModelPart leftArm;
     private final ModelPart leftHand;
 
-    private Instrument instrument;
     public MusicianEntityModel(ModelPart root) {
         this.root = root;
         this.head = root.getChild(EntityModelPartNames.HEAD);
@@ -42,15 +39,17 @@ public class MusicianEntityModel<T extends MusicianPillagerEntity> extends Singl
         root.addChild(EntityModelPartNames.RIGHT_LEG, ModelPartBuilder.create().uv(0, 22).cuboid(-2.0f, 0.0f, -2.0f, 4.0f, 12.0f, 4.0f), ModelTransform.pivot(-2.0f, 12.0f, 0.0f));
         root.addChild(EntityModelPartNames.LEFT_LEG, ModelPartBuilder.create().uv(0, 22).mirrored().cuboid(-2.0f, 0.0f, -2.0f, 4.0f, 12.0f, 4.0f), ModelTransform.pivot(2.0f, 12.0f, 0.0f));
         ModelPartData leftArm = root.addChild(EntityModelPartNames.LEFT_ARM, ModelPartBuilder.create().uv(40, 46).mirrored().cuboid(-1f, -2f, -2f, 4f, 6f, 4f), ModelTransform.pivot(5.0f, 2.0f, 0.0f));
-        leftArm.addChild("hand", ModelPartBuilder.create().uv(45, 11).mirrored().cuboid(-4, 0, -4, 4f, 6f, 4f), ModelTransform.pivot(3.0f, 4.0f, 2.0f));
+        leftArm.addChild("hand", ModelPartBuilder.create().uv(45, 11).mirrored().cuboid(-4, 0, -4, 4f, 6f, 4f), ModelTransform.pivot(3.0f, 4.0f, 2.0f))
+                .addChild("stick", ModelPartBuilder.create().uv(62, 0).cuboid(0, 0, 0, 0.5f, 8f, 0.5f), ModelTransform.of(-1, 4, -2, 0, 0, 0.5f));
         ModelPartData rightArm = root.addChild(EntityModelPartNames.RIGHT_ARM, ModelPartBuilder.create().uv(40, 46).cuboid(-3.0f, -2.0f, -2.0f, 4.0f, 6.0f, 4.0f), ModelTransform.pivot(-5.0f, 2.0f, 0.0f));
-        rightArm.addChild("hand", ModelPartBuilder.create().uv(45, 11).cuboid(0, 0, -4, 4.0F, 6.0F, 4.0F), ModelTransform.pivot(-3.0f, 4.0f, 2.0f));
+        rightArm.addChild("hand", ModelPartBuilder.create().uv(45, 11).cuboid(0, 0, -4, 4.0F, 6.0F, 4.0F), ModelTransform.pivot(-3.0f, 4.0f, 2.0f))
+                .addChild("stick", ModelPartBuilder.create().uv(62, 0).cuboid(0, 0, 0, 0.5f, 8f, 0.5f), ModelTransform.of(0, 4, -2, 0, 0, -0.5f));
         return TexturedModelData.of(modelData, 64, 64);
     }
 
     @Override
     public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        instrument = entity.getInstrument();
+        Instrument instrument = entity.getInstrument();
         this.head.yaw = headYaw * ((float)Math.PI / 180);
         this.head.pitch = headPitch * ((float)Math.PI / 180);
 
@@ -60,12 +59,18 @@ public class MusicianEntityModel<T extends MusicianPillagerEntity> extends Singl
             this.rightArm.yaw = 0.4f + this.head.yaw;
             this.rightHand.yaw = -0.001f; //Fix z-fighting on the arm
 
-            this.leftArm.pitch = -1.1f;
-            this.leftArm.yaw = 0.6f + this.head.yaw;
+            this.leftArm.pitch = -1.2f;
+            this.leftArm.yaw = (this.head.yaw < 0.5 ? 0.6f + this.head.yaw : 1.1f);
             this.leftHand.pitch = -0.7f;
             this.leftHand.yaw = 0.2f;
         } else if(instrument == ModItems.DRUM) {
-            this.rightArm.pitch = -1.58f;
+            this.leftHand.getChild("stick").pivotX=-1;
+            float armPitch = MathHelper.cos(animationProgress/1.85f); // 1.85f
+            float handYaw = 0.5f;
+            this.rightHand.roll = -handYaw;
+            this.rightArm.pitch = armPitch/ 1.75f - 1.7f;
+            this.leftHand.roll = handYaw;
+            this.leftArm.pitch = (-armPitch)/  1.75f - 1.7f;
         } else {
             this.rightArm.pitch = 0;
             this.rightArm.yaw = 0.0f;

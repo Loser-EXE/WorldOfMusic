@@ -13,7 +13,7 @@ import worldofmusic.WorldOfMusic;
 import worldofmusic.entity.MusicianVillager;
 import worldofmusic.item.Instrument;
 import worldofmusic.item.ModItems;
-import worldofmusic.sound.SongHelper;
+import worldofmusic.sound.SongManager;
 
 @Mixin(VillagerEntity.class)
 public abstract class VillagerEntityMixin {
@@ -45,7 +45,7 @@ public abstract class VillagerEntityMixin {
         $this.setStackInHand(Hand.MAIN_HAND, new ItemStack(instrument));
 
         if(!isPlaying && !$this.getWorld().isClient) {
-            SongHelper.playSong($this, SongHelper.genRandomSong(instrument.getSongs(Instrument.PlayCondition.VILLAGES)), instrument.getInstrumentName());
+            SongManager.playSong($this, SongManager.genRandomSong(instrument.getSongs(Instrument.PlayCondition.VILLAGES)), instrument.getInstrumentName());
             isPlaying = true;
         }
     }

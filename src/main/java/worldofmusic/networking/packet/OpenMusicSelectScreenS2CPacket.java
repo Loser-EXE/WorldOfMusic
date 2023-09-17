@@ -8,6 +8,8 @@ import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.PacketByteBuf;
 import worldofmusic.gui.MusicSelectScreen;
 
+import java.util.UUID;
+
 @Environment(EnvType.CLIENT)
 public class OpenMusicSelectScreenS2CPacket {
     public static void receive(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf, PacketSender responseSender) {

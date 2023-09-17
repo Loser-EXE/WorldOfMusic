@@ -8,11 +8,10 @@
 		"VillagerProfessionInvoker",
 		"PoiTypesInvoker",
 		"VillagerTaskListProviderInvoker",
-		"VillagerEntityMixin",
-		"HeldItemFeatureRendererMixin"
+		"VillagerEntityMixin"
 	],
 	"client": [
-
+		"HeldItemFeatureRendererMixin"
 	],
 	"server": [
 

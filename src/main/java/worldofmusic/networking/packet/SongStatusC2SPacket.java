@@ -8,7 +8,7 @@ import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import worldofmusic.entity.pillager.MusicianPillagerEntity;
 
-public class PlaySongStatusC2SPacket {
+public class SongStatusC2SPacket {
     public static void receive(MinecraftServer server, ServerPlayerEntity player, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender responseSender) {
         Entity entity = player.getWorld().getEntityById(buf.readInt());
         if(entity instanceof MusicianPillagerEntity musicianPillager) {

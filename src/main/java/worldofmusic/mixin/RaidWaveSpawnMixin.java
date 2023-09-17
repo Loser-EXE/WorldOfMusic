@@ -17,7 +17,7 @@ import worldofmusic.entity.ModEntities;
 import worldofmusic.entity.pillager.MusicianPillagerEntity;
 import worldofmusic.item.Instrument;
 import worldofmusic.item.ModItems;
-import worldofmusic.sound.SongHelper;
+import worldofmusic.sound.SongManager;
 
 @Mixin(Raid.class)
 public abstract class RaidWaveSpawnMixin {
@@ -30,10 +30,10 @@ public abstract class RaidWaveSpawnMixin {
     @Inject(method = "spawnNextWave", at = @At("HEAD"))
     public void spawnNextWave(BlockPos pos, CallbackInfo info) {
         if(Math.random() < 0.3) {
-            MusicianPillagerEntity.setRaidSong(SongHelper.genRandomSong(ModItems.BAGPIPES.getSongs(Instrument.PlayCondition.RAID)));
+            MusicianPillagerEntity.setRaidSong(SongManager.genRandomSong(ModItems.BAGPIPES.getSongs(Instrument.PlayCondition.RAID)));
             registerMusicianToRaid(ModEntities.BAGPIPER_PILLAGER_ENTITY, pos);
         } else {
-            MusicianPillagerEntity.setRaidSong(SongHelper.genRandomSong(ModItems.FIFE.getSongs(Instrument.PlayCondition.RAID)));
+            MusicianPillagerEntity.setRaidSong(SongManager.genRandomSong(ModItems.FIFE.getSongs(Instrument.PlayCondition.RAID)));
             registerMusicianToRaid(ModEntities.FIFER_PILLAGER_ENTITY, pos);
         }
         registerMusicianToRaid(ModEntities.DRUMMER_PILLAGER_ENTITY, pos);
