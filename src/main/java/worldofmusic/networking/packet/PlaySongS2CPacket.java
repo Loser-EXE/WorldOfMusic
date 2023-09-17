@@ -30,6 +30,7 @@ public class PlaySongS2CPacket {
 
         if (entity == null) {
             sendResponsePacket(id, false, responseSender);
+            return;
         }
 
         String song = buf.readString();
